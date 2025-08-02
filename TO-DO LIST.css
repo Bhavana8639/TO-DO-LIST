@@ -1,0 +1,121 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #2c5364, #1a2980, #26d0ce);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+    margin-top: 40px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+form {
+    max-width: 400px;
+    margin: 30px auto 20px auto;
+    padding: 20px;
+    border: 2px solid #00ffe7;
+    border-radius: 10px;
+    background: rgba(20, 20, 40, 0.85);
+    box-shadow: 0 0 20px #00ffe7, 0 0 40px #26d0ce;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ffe7;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffe7;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00ffe7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+    box-shadow: 0 0 10px #00ffe7 inset;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #26d0ce;
+}
+
+button {
+    background: linear-gradient(90deg, #00ffe7, #26d0ce);
+    color: #222;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #00ffe7, 0 0 20px #26d0ce;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00ffe7, 0 0 40px #26d0ce;
+}
+
+/* Fade-in animation for new tasks */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: rgba(0, 255, 231, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    border-left: 4px solid #00ffe7;
+    animation: fadeIn 0.4s;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #00ffe7;
+    cursor: pointer;
+}
+
+li:hover {
+    background: rgba(38, 208, 206, 0.2);
+    box-shadow: 0 0 20px #26d0ce;
+}
+
+/* Strike-through animation for completed tasks */
+@keyframes strikeThrough {
+    from { text-decoration-color: transparent; }
+    to { text-decoration-color: #00ffe7; }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #00ffe7;
+    animation: strikeThrough 0.3s;
+    background: rgba(0, 255, 231, 0.25);
+    box-shadow: 0 0 20px #00ffe7;
+    transition: background 0.3s, color 0.3s;
+}
